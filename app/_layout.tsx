@@ -6,7 +6,8 @@ import "../global.css";
 export default function RootLayout() {
   return(
     <Provider store={store}>
-      <Stack />
+      {/* Hide headers globally so nested stacks/groups don't surface the native header/title */}
+      <Stack screenOptions={{ headerShown: false }} />
     </Provider>
   )
 }
