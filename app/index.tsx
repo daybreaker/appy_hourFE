@@ -16,8 +16,8 @@ export default function Index() {
       {isLoading && <Text>Loading...</Text>}
       {error && <Text>Error fetching venues</Text>}
       {data && (
-        <View>
-          <Text>Venues:</Text>
+        <View className="mt-2">
+          <Text className="text-xl">Venues:</Text>
           {data.map((venue: any) => (
             <Text key={venue.id}>{venue.name}</Text>
           ))}

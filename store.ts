@@ -1,5 +1,6 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { baseApi } from './features/api/baseApi'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { baseApi } from './features/api/baseApi';
+
 
 const rootReducer = combineReducers({
   [baseApi.reducerPath]: baseApi.reducer,
@@ -7,7 +8,6 @@ const rootReducer = combineReducers({
 
 export const store = configureStore({
   reducer: rootReducer,
-  // enhancers: (getDefaultEnhancers) => __DEV__ ? getDefaultEnhancers().concat(devToolsEnhancer()) : getDefaultEnhancers(),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
 })
