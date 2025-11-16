@@ -6,9 +6,10 @@ import {
   FlatList,
   SafeAreaView,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
+
+import { Button } from "@/components/Button";
 
 export default function Index() {
   // No auth slice in the project yet — simulate local auth state for UI
@@ -45,14 +46,12 @@ export default function Index() {
         <Text className="text-2xl font-bold text-gray-900 dark:text-white">Happy Hours</Text>
 
         {user ? (
-          <TouchableOpacity onPress={onProfilePress} className="p-2 flex-row">
+          <Button onPress={onProfilePress} className="p-2 flex-row">
             <Text>{user.name}</Text>
             <Ionicons name="person-circle" size={36} color={"#111827"} />
-          </TouchableOpacity>
+          </Button>
         ) : (
-          <TouchableOpacity onPress={onLoginPress} className="px-3 py-2 bg-indigo-600 rounded-md">
-            <Text className="text-white font-medium">Login</Text>
-          </TouchableOpacity>
+          <Button onPress={onLoginPress} label="Login" />
         )}
       </View>
 
