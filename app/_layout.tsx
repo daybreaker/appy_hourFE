@@ -8,6 +8,9 @@ export default function RootLayout() {
     <Provider store={store}>
       {/* Hide headers globally so nested stacks/groups don't surface the native header/title */}
       <Stack screenOptions={{ headerShown: false }} />
+      <Stack.Protected guard={__DEV__}>
+        <Stack.Screen name="storybook" />
+      </Stack.Protected>
     </Provider>
   )
 }
